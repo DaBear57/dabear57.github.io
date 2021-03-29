@@ -74,7 +74,7 @@ b {
 	font-family: Oswald;
 }
 
-.home {
+#home {
 	position: absolute;
 	top: 2.5vw;
 	left: 2vw;
