@@ -51,10 +51,43 @@ b {
 	width: 100%;
 }
 
-@media not all and (hover: none) {
-	#jump:hover {
-		color: #b6a39e;
-	}
+img:hover {
+	transform: scale(1.05);
+}
+
+#jump:hover {
+	outline-color: #b6a39e;
+}
+
+img {
+	transition: all 0.5s ease-in-out;
+}
+
+div > b {
+	text-decoration: none;
+	z-index: 2;
+}
+
+div > b::before {
+	content: "";
+	position: absolute;
+	top: 3.9vw;
+	height: 0.2vw;
+	background: #726e75;
+	opacity: 0;
+	border-radius: 5px;
+	transform: scaleX(0);
+	transition: 0.5s linear;
+}
+
+div:hover > b::before,
+div:hover > b::before{
+	opacity: 1;
+	transform: scaleX(1);
+}
+
+.grid > div {
+	position: relative;
 }
 
 .contactinfo {
@@ -69,24 +102,29 @@ b {
 	font-size: 0.8vw;
 }
 
-#text {
+#welcome {
 	grid-row: 1;
 	text-align: center;
 	background: white;
-	font-size: 1.35vw;
+	font-size: 1.4vw;
 	font-family: Oswald;
 	color: #726e75;
-	padding: 1.3vw;
+	padding-bottom: 1.3vw;
+	padding-top: 0.5vw;
 	border-radius: var(--radius);
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
+}
+#welcome > b::before {
+	width: 42%;
+	left: 29%;
 }
 
 #flowers {
 	grid-row: 2 / 4;
 	border-radius: var(--radius);
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
 }
 
 #logo {
@@ -94,60 +132,73 @@ b {
 	width: 100%;
 	border-radius: var(--radius);
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
+	object-fit: cover;
 }
 
 #jump {
+	position: relative;
 	grid-row: 3;
 	text-align: center;
 	background: white;
 	font-size: 3vw;
-	font-family: Oswald;
 	color: #726e75;
-	padding: 0.5vw;
-	padding-top: 0px;
+	padding: 0.6vw;
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
-	transition: color 0.3s;
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
 	cursor: pointer;
+	transition: outline-color 0.5s ease-in-out;
 }
+#jump > b::before {
+	width: 44%;
+	left: 28%;
+	top: 4.1vw;
+}
+
 
 #about {
 	background: white;
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
 	color: #726e75;
 	font-size: 1.2vw;
 	font-family: Oswald;
 	text-align: center;
 	padding: 1vw;
-	padding-top:1.5vw;
+	padding-top: 1.5vw;
 	line-height: 1.6vw;
+}
+#about > b::before {
+	width: 9%;
+	left: 45.5%;
+	top: 3.8vw;
 }
 
 #headshot {
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
 }
 
 .grid {
 	position: absolute;
-	top: 2vw;
-	grid-gap: 2vw;
-	left: 2vw;
-	width: 95.35vw;
-	padding-bottom: 2vw;
+	top: 2.2vw;
+	grid-gap: 2.4vw;
+	left: 2.4vw;
+	width: 94.95vw;
 }
 
 #banner {
 	text-align: center;
 	background: white;
-	font-size: 3.5vw;
-	font-family: AmaticSC-Bold;
+	font-size: 3vw;
 	color: #726e75;
 	padding: 0.5vw;
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
+}
+#banner > b::before {
+	width: 6%;
+	left: 47%;
 }
 
 .photo {
@@ -155,7 +206,7 @@ b {
     height: 22vw;
 	object-fit: cover;
 	outline: var(--border) solid #726e75;
-	outline-offset: calc(var(--border) * -1);
+	outline-offset: calc(var(--border) * -1 + 0.2vw);
 }
 
 #plug {
