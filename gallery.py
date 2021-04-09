@@ -1,5 +1,5 @@
 import os
-folder = r"C:\Users\bdebe_000\Documents\DeBear Necessities\dabear57.github.io\assets\flowers"
+folder = r'C:\Users\bdebe_000\Documents\DeBear_Necessities\dabear57.github.io\assets\flowers'
 files = os.listdir(folder)
 for i in range(len(files)):
     #print(files[i])
