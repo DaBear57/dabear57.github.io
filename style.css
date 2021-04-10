@@ -41,6 +41,7 @@ body {
 
 b {
 	font-family: AmaticSC-Bold;
+	font-size: 3vw;
 }
 
 .bar {
@@ -51,8 +52,10 @@ b {
 	width: 100%;
 }
 
-img:hover {
-	transform: scale(1.05);
+@media (min-width: 62rem) {
+	img:hover {
+		transform: scale(1.05);
+	}
 }
 
 #jump:hover {
@@ -141,7 +144,6 @@ div:hover > b::before{
 	grid-row: 3;
 	text-align: center;
 	background: white;
-	font-size: 3vw;
 	color: #726e75;
 	padding: 0.6vw;
 	outline: var(--border) solid #726e75;
@@ -154,7 +156,6 @@ div:hover > b::before{
 	left: 28%;
 	top: 4.1vw;
 }
-
 
 #about {
 	background: white;
@@ -175,6 +176,7 @@ div:hover > b::before{
 }
 
 #headshot {
+	object-fit: cover;
 	outline: var(--border) solid #726e75;
 	outline-offset: calc(var(--border) * -1 + 0.2vw);
 }
@@ -214,4 +216,87 @@ div:hover > b::before{
 	font-size: 0.8vw;
 	font-family: Oswald;
 	color: #726e75;
+}
+
+/* for narrow screens */
+@media (max-width: 62rem) {
+	b {
+		font-size: 5vw;
+	}
+
+	div > b::before {
+		top: 6vw;
+	}
+
+	.contactinfo {
+		height: 1.8vw;
+	}
+
+	.info {
+		font-size: 1.5vw;
+	}
+
+	#welcome {
+		font-size: 2vw;
+	}
+
+	#welcome > b::before {
+		width: 49%;
+		left: 25.5%;
+	}
+
+	#flowers {
+		display: none;
+	}
+
+	#jump > b::before {
+		top: 6.3vw;
+		width: 52%;
+		left: 24%;
+	}
+
+	#logo {
+		grid-row: 3;
+	}
+
+	#jump {
+		grid-row: 2;
+	}
+
+	#headshot {
+		grid-row: 2 / 4;
+	}
+
+	#about {
+		padding-top: 2.5vw;
+		font-size: 2vw;
+		line-height: 2.3vw;
+	}
+
+	#about > b::before {
+		top: 5.9vw;
+		width: 9%;
+		left: 45.5%;
+	}
+
+	#headshot {
+		height: 55vw;
+	}
+
+	.grid {
+		top: 3vw;
+	}
+
+	#banner > b::before {
+		width: 11%;
+		left: 44.5%;
+	}
+
+	.photo {
+		height: 40vw;
+	}
+
+	#plug {
+		font-size: 1.5vw;
+	}
 }
